@@ -1,9 +1,24 @@
 import { plainToClass } from 'class-transformer';
-import { IsNumber, validateSync } from 'class-validator';
+import { IsNumber, IsString, validateSync } from 'class-validator';
 
 class EnvironmentVariables {
   @IsNumber()
   PORT: number;
+
+  @IsNumber()
+  DATABASE_PORT: number;
+
+  @IsString()
+  DATABASE_HOST: string;
+
+  @IsString()
+  DATABASE_NAME: string;
+
+  @IsString()
+  DATABASE_USERNAME: string;
+
+  @IsString()
+  DATABASE_PASSWORD: string;
 }
 
 export const validate = (config: Record<string, unknown>) => {

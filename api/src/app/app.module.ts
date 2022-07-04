@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 
 import { ConfigModule } from '@/core/config/config.module';
+import { PostgresModule } from '@/core/database/postgres.module';
 
 import { GuidesModule } from './guides/guides.module';
 import { UsersModule } from './users/users.module';
@@ -10,7 +11,13 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
 @Module({
-  imports: [ConfigModule, GuidesModule, UsersModule, WorkspacesModule],
+  imports: [
+    ConfigModule,
+    PostgresModule,
+    GuidesModule,
+    UsersModule,
+    WorkspacesModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
