@@ -9,6 +9,8 @@ import { WorkspacesModule } from './workspaces/workspaces.module';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { StepsModule } from './steps/steps.module';
+import { AuthenticationModule } from './authentication/authentication.module';
 
 @Module({
   imports: [
@@ -17,6 +19,8 @@ import { AppService } from './app.service';
     GuidesModule,
     UsersModule,
     WorkspacesModule,
+    StepsModule,
+    AuthenticationModule,
   ],
   controllers: [AppController],
   providers: [AppService],
